@@ -9,14 +9,6 @@ import Results from './Results';
 import ReactGA from 'react-ga';
 import defaultData from './defaultData.js';
 
-ReactGA.initialize('UA-141909360-1', {
-    debug: true,
-    titleCase: false,
-    gaOptions: {
-        userId: 123
-    }
-});
-
 class AppRouter extends React.Component {
     state = {
         actualData: [],

@@ -2,7 +2,6 @@ import * as React from "react";
 import _ from 'lodash';
 import {Redirect} from "react-router";
 import emojiMap from './EmojiMap';
-import * as ReactGA from "react-ga";
 
 const Papa = require("papaparse/papaparse.min.js");
 
@@ -55,10 +54,6 @@ class DataUploader extends React.Component {
 
     updateData(result) {
         let data = result.data;
-        ReactGA.event({
-            category: 'User',
-            action: 'Uploaded a CSV'
-        });
         // TODO error check
         if (true) {
             this.props.updateData(data);
