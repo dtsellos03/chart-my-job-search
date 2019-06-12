@@ -6,7 +6,16 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import UploadCSV from './DataUploader';
 import Introduction from './Introduction';
 import Results from './Results';
+import ReactGA from 'react-ga';
 import defaultData from './defaultData.js';
+
+ReactGA.initialize('UA-141909360-1', {
+    debug: true,
+    titleCase: false,
+    gaOptions: {
+        userId: 123
+    }
+});
 
 class AppRouter extends React.Component {
     state = {
@@ -35,7 +44,7 @@ class AppRouter extends React.Component {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item active">
-                                    <a className="nav-link" href="#"><Link to="/intro">Intro</Link></a>
+                                    <a className="nav-link" href="#"><Link to="/">Intro</Link></a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#"><Link to="/upload">Upload</Link></a>
@@ -49,9 +58,9 @@ class AppRouter extends React.Component {
                 </div>
                 <div className="App">
                     <div className="container">
-                        <Route path="/intro/" render={() => <Introduction data={props.defaultData} /> } />
                         <Route path="/upload/" render={() => <UploadCSV updateData={this.updateData}  /> } />
-                        <Route path="/results" render={() => <Results data={props.actualData} /> } />
+                        <Route path="/results/" render={() => <Results data={props.actualData} /> } />
+                        <Route exact path="/" render={() => <Introduction data={props.defaultData} /> } />
                     </div>
                 </div>
             </Router>

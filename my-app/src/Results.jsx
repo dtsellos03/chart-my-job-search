@@ -2,7 +2,16 @@ import * as React from "react";
 import _ from "lodash";
 import moment from "moment";
 import emojiMap from './EmojiMap';
-import { VictoryChart, VictoryScatter, VictoryTheme, VictoryAxis, VictoryTooltip, VictoryVoronoiContainer, VictoryLegend, VictoryBar} from 'victory';
+import {
+    VictoryChart,
+    VictoryScatter,
+    VictoryTheme,
+    VictoryAxis,
+    VictoryTooltip,
+    VictoryVoronoiContainer,
+    VictoryLegend,
+    VictoryBar
+} from 'victory';
 
 class ChartPoint extends React.Component {
     render() {
@@ -21,7 +30,7 @@ class MatPoint extends React.Component {
         const {x, y, datum} = this.props;
         const cat = emojiMap[datum.name] || '🔴';
         return (
-            <text x={x-3} y={y+3} fontSize={8}>
+            <text x={x - 3} y={y + 3} fontSize={8}>
                 {cat}
             </text>
         );
@@ -61,7 +70,7 @@ class Results extends React.Component {
         let inverseGrouping = {};
         let companies = _.reduce(_.keys(groupedByCompanies), (result, key, index) => {
                 result[key] = index + 1;
-                inverseGrouping[index+1] = key;
+                inverseGrouping[index + 1] = key;
                 return result;
             }
             , {});
@@ -97,10 +106,10 @@ class Results extends React.Component {
                         />
                     }
                     width={500}
-                    scale={{ x: "time" }}
+                    scale={{x: "time"}}
                     theme={VictoryTheme.material}
                     domain={{x: [minX, maxX], y: [minY, maxY]}}
-                    domainPadding={{ x: [0, 20], y: 0 }}
+                    domainPadding={{x: [0, 20], y: 0}}
                 >
                     <VictoryLegend x={20} y={10}
                                    orientation="horizontal"

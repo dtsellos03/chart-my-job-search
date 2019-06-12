@@ -1,31 +1,31 @@
 const defaultData =   [
     {
-        "company": "Long John Silvers",
+        "company": "Pizza Hut",
         "date": "2/3/2019",
         "event": "phone screen request"
     },
     {
-        "company": "Long John Silvers",
+        "company": "Pizza Hut",
         "date": "2/4/2019",
         "event": "phone screen"
     },
     {
-        "company": "Panda Express",
+        "company": "Dominos",
         "date": "1/26/2019",
         "event": "applied"
     },
     {
-        "company": "Panda Express",
+        "company": "Dominos",
         "date": "2/15/2019",
         "event": "phone screen request"
     },
     {
-        "company": "Panda Express",
+        "company": "Dominos",
         "date": "2/19/2019",
         "event": "technical phone screen"
     },
     {
-        "company": "Panda Express",
+        "company": "Dominos",
         "date": "2/19/2019",
         "event": "rejection"
     },
@@ -136,7 +136,7 @@ const defaultData =   [
     },
     {
         "company": "Applebees",
-        "date": "3/15/2019",
+        "date": "3/17/2019",
         "event": "accept offer"
     },
     {
