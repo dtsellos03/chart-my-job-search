@@ -10,16 +10,15 @@ import {
     VictoryTooltip,
     VictoryVoronoiContainer,
     VictoryLegend,
-    VictoryBar
 } from 'victory';
 
 class ChartPoint extends React.Component {
     render() {
         const {x, y, datum} = this.props;
-        const cat = emojiMap[datum.event] || '⚪';
+        const icon = emojiMap[datum.event] || '⚪';
         return (
             <text x={x} y={y} fontSize={10}>
-                {cat}
+                {icon}
             </text>
         );
     }
@@ -28,10 +27,10 @@ class ChartPoint extends React.Component {
 class MatPoint extends React.Component {
     render() {
         const {x, y, datum} = this.props;
-        const cat = emojiMap[datum.name] || '🔴';
+        const icon = emojiMap[datum.name] || '🔴';
         return (
             <text x={x - 3} y={y + 3} fontSize={8}>
-                {cat}
+                {icon}
             </text>
         );
     }
@@ -39,7 +38,6 @@ class MatPoint extends React.Component {
 
 class LabelComponent extends React.Component {
     render() {
-        let theLabel = () => <h1>AAA</h1>;
         return <VictoryTooltip labelComponent={10}/>
     }
 }
@@ -68,7 +66,7 @@ class Results extends React.Component {
     transformCompaniesToY(events) {
         let groupedByCompanies = _.groupBy(events, 'company');
         let inverseGrouping = {};
-        let companies = _.reduce(_.keys(groupedByCompanies), (result, key, index) => {
+        _.reduce(_.keys(groupedByCompanies), (result, key, index) => {
                 result[key] = index + 1;
                 inverseGrouping[index + 1] = key;
                 return result;
@@ -89,7 +87,6 @@ class Results extends React.Component {
         let minY = 0;
         let maxY = _.get(_.maxBy(data, 'y'), 'y');
         let yValues = _.map(data, thing => _.get(thing, 'y'));
-        let xValues = _.map(data, thing => _.get(thing, 'x'));
         let style = {width: 1000, height: 500, margin: 'auto'};
         return (
             <div style={style}>

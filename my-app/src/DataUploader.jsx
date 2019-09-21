@@ -55,11 +55,8 @@ class DataUploader extends React.Component {
     updateData(result) {
         let data = result.data;
         // TODO error check
-        if (true) {
-            this.props.updateData(data);
-            this.setRedirect();
-        } else {
-        }
+        this.props.updateData(data);
+        this.setRedirect();
     }
 
     render() {

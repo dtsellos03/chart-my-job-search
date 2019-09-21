@@ -1,13 +1,12 @@
 import React from 'react';
 import siteLogo from './siteLogo.png';
 import './App.css';
-import _ from 'lodash';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import UploadCSV from './DataUploader';
 import Introduction from './Introduction';
 import Results from './Results';
-import ReactGA from 'react-ga';
 import defaultData from './defaultData.js';
+
 
 class AppRouter extends React.Component {
     state = {
@@ -19,7 +18,7 @@ class AppRouter extends React.Component {
         this.setState({actualData: newData})
     };
 
-    render () {
+    render() {
         console.log(this.state);
         const props = this.state;
         return (
@@ -50,9 +49,9 @@ class AppRouter extends React.Component {
                 </div>
                 <div className="App">
                     <div className="container">
-                        <Route path="/upload/" render={() => <UploadCSV updateData={this.updateData}  /> } />
-                        <Route path="/results/" render={() => <Results data={props.actualData} /> } />
-                        <Route exact path="/" render={() => <Introduction data={props.defaultData} /> } />
+                        <Route path="/upload/" render={() => <UploadCSV updateData={this.updateData}/>}/>
+                        <Route path="/results/" render={() => <Results data={props.actualData}/>}/>
+                        <Route exact path="/" render={() => <Introduction data={props.defaultData}/>}/>
                     </div>
                 </div>
             </Router>

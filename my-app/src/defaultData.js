@@ -131,37 +131,37 @@ const defaultData =   [
     },
     {
         "company": "Applebees",
-        "date": "3/14/2019",
+        "date": "3/15/2019",
         "event": "offer"
     },
     {
         "company": "Applebees",
-        "date": "3/17/2019",
+        "date": "3/20/2019",
         "event": "accept offer"
     },
     {
         "company": "White Castle",
-        "date": "2/2/2019",
+        "date": "2/3/2019",
         "event": "applied"
     },
     {
         "company": "White Castle",
-        "date": "2/7/2019",
+        "date": "2/9/2019",
         "event": "phone screen request"
-    },
-    {
-        "company": "White Castle",
-        "date": "3/4/2019",
-        "event": "phone screen request"
-    },
-    {
-        "company": "White Castle",
-        "date": "3/6/2019",
-        "event": "technical phone screen"
     },
     {
         "company": "White Castle",
         "date": "3/8/2019",
+        "event": "phone screen request"
+    },
+    {
+        "company": "White Castle",
+        "date": "3/9/2019",
+        "event": "technical phone screen"
+    },
+    {
+        "company": "White Castle",
+        "date": "3/11/2019",
         "event": "rejection"
     },
     {
